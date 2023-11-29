@@ -15,14 +15,16 @@ static void push(s_node **dst, s_node **src)
     *dst = tmp;
 }
 
-void pa(s_node **a, s_node **b)
+void pa(s_node **a, s_node **b, bool print)
 {
     push(a, b);
-    write(1, "pa\n", 3);
+    if (print)
+        write(1, "pa\n", 3);
 }
 
-void pb(s_node **b, s_node **a)
+void pb(s_node **b, s_node **a, bool print)
 {
     push(b, a);
-    write(1, "pb\n", 3);
+    if (print)
+        write(1, "pb\n", 3);
 }

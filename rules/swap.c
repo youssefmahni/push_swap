@@ -11,21 +11,24 @@ static void swap(s_node **head)
     *head = tmp; // head = 2
 }
 
-void sa(s_node **a)
+void sa(s_node **a, bool print)
 {
     swap(a);
-    write(1, "sa\n", 3);
+    if (print)
+        write(1, "sa\n", 3);
 }
 
-void sb(s_node **b)
+void sb(s_node **b, bool print)
 {
     swap(b);
-    write(1, "sb\n", 3);
+    if (print)
+        write(1, "sb\n", 3);
 }
 
-void ss(s_node **a, s_node **b)
+void ss(s_node **a, s_node **b, bool print)
 {
     swap(a);
     swap(b);
-    write(1, "ss\n", 3);
+    if (print)
+        write(1, "ss\n", 3);
 }

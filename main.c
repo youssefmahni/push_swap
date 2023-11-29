@@ -13,7 +13,7 @@ int main(int ac, char **av)
     if (!stack_sorted(a))
     {
         if (stack_len(a) == 2)
-            sa(&a);
+            sa(&a, 1);
         else if (stack_len(a) == 3)
             sort_three(&a);
         else

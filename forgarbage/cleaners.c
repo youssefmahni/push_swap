@@ -1,4 +1,5 @@
 #include "../push_swap.h"
+#include "../bonus/get_next_line.h"
 
 void clear_stack(s_node **a)
 {
@@ -30,4 +31,16 @@ void exit_error(s_node **a, char **av, bool free_av)
 		clear_stack(a);
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void clear_rules(rule **a)
+{
+	rule *tmp;
+
+	while (a && *a)
+	{
+		tmp = (*a)->next;
+		free(*a);
+		*a = tmp;
+	}
 }

@@ -18,21 +18,24 @@ static void reverse_rotate(s_node **head)
     *head = last; 
 }
 
-void rra(s_node **a)
+void rra(s_node **a, bool print)
 {
     reverse_rotate(a);
-    write(1, "rra\n", 4);
+    if (print)
+        write(1, "rra\n", 4);
 }
 
-void rrb(s_node **b)
+void rrb(s_node **b, bool print)
 {
     reverse_rotate(b);
-    write(1, "rrb\n", 4);
+    if (print)
+        write(1, "rrb\n", 4);
 }
 
-void rrr(s_node **a, s_node **b)
+void rrr(s_node **a, s_node **b, bool print)
 {
     reverse_rotate(a);
     reverse_rotate(b);
-    write(1, "rrr\n", 4);
+    if (print)
+        write(1, "rrr\n", 4);
 }

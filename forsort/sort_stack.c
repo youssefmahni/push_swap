@@ -5,11 +5,11 @@ void sort_three(s_node **a)
     s_node *max;
     max = stack_max(*a);
     if ((*a)->value == max->value)
-        ra(a);
+        ra(a,1);
     else if ((*a)->next->value == max->value)
-        rra(a);
+        rra(a,1);
     if ((*a)->value > (*a)->next->value)
-        sa(a);
+        sa(a,1);
 }
 
 void push_swap(s_node **a, s_node **b)
@@ -17,11 +17,9 @@ void push_swap(s_node **a, s_node **b)
     s_node *smallest;
     int a_len;
     a_len = stack_len(*a);
-
     while (a_len-- > 3)
-        pb(b, a);
+        pb(b, a, 1);
     sort_three(a);
-
     while (*b)
     {
         init_nodes(*a, *b);
@@ -31,8 +29,8 @@ void push_swap(s_node **a, s_node **b)
     smallest = stack_min(*a);
     if (smallest->above_median)
         while (*a != smallest)
-            ra(a);
+            ra(a,1);
     else
         while (*a != smallest)
-            rra(a);
+            rra(a,1);
 }

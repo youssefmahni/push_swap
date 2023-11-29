@@ -15,21 +15,24 @@ static void rotate(s_node **head)
     last->next = tmp; 
 }
 
-void ra(s_node **a)
+void ra(s_node **a, bool print)
 {
     rotate(a);
-    write(1, "ra\n", 3);
+    if (print)
+        write(1, "ra\n", 3);
 }
 
-void rb(s_node **b)
+void rb(s_node **b, bool print)
 {
     rotate(b);
-    write(1, "rb\n", 3);
+    if (print)
+        write(1, "rb\n", 3);
 }
 
-void rr(s_node **a, s_node **b)
+void rr(s_node **a, s_node **b, bool print)
 {
     rotate(a);
     rotate(b);
-    write(1, "rr\n", 3);
+    if (print)
+        write(1, "rr\n", 3);
 }
