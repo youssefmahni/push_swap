@@ -85,14 +85,16 @@ static void perform_rules(s_node **a, s_node **b, rule **rules)
     }
 }
 
-static void okko(s_node *a, s_node *b)
+static void get_rules(char **line, rule **rules)
 {
-    if (stack_sorted(a) && !b)
-        write(1, "OK\n", 3);
-    else
-        write(1, "KO\n", 3);
-    exit(0);
+    while (*line)
+    {
+        append_rule(rules, *line);
+        free(*line);
+        *line = get_next_line(0);
+    }
 }
+
 
 int main(int ac, char **av)
 {
@@ -100,20 +102,19 @@ int main(int ac, char **av)
     s_node  *b;
     rule *rules;
     char *line;
-atexit(f);
+// atexit(f);
     a = NULL;
     b = NULL;
     rules = NULL;
     av = get_args(ac, av);
     line = get_next_line(0);
 	if (!line)
-        return (vector_clear(av));
-    while (line)
     {
-        append_rule(&rules, line);
-        free(line);
-        line = get_next_line(0);
+        vector_clear(av);
+        write(2, "KO\n", 3);
+        return (1);
     }
+    get_rules(&line, &rules);
     init_stack(&a, av);
     perform_rules(&a, &b, &rules);
     okko(a, b);
@@ -121,4 +122,3 @@ atexit(f);
     clear_stack(&a);
     return (0);
 }
-   

@@ -48,7 +48,7 @@ s_node *stack_cheapest(s_node *b);
 
 // for garbage
 void    exit_error(s_node **a, char **av);
-int    vector_clear(char **v);
+void    vector_clear(char **v);
 void    clear_stack(s_node **a);
 void    clear_rules(rule **a);
 
@@ -68,6 +68,7 @@ void pb(s_node **b, s_node **a, bool print);
 //for sort
 void sort_three(s_node **a);
 void push_swap(s_node **a, s_node **b);
+void okko(s_node *a, s_node *b);
 
 //for nodes
 void set_index_median(s_node *a);

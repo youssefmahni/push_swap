@@ -8,7 +8,7 @@ int main(int ac, char **av)
 {
     s_node  *a;
     s_node *b;
-atexit(f);
+// atexit(f);
     a = NULL;
     b = NULL;
     av = get_args(ac, av);

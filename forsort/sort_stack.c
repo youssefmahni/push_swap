@@ -34,3 +34,12 @@ void push_swap(s_node **a, s_node **b)
         while (*a != smallest)
             rra(a,1);
 }
+
+void okko(s_node *a, s_node *b)
+{
+    if (stack_sorted(a) && !b)
+        write(1, "OK\n", 3);
+    else
+        write(1, "KO\n", 3);
+    exit(0);
+}
