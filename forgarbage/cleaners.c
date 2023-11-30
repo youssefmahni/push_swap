@@ -4,7 +4,6 @@
 void clear_stack(s_node **a)
 {
 	s_node *tmp;
-
 	while (a && *a)
 	{
 		tmp = (*a)->next;
@@ -13,22 +12,35 @@ void clear_stack(s_node **a)
 	}
 }
 
-void vector_clear(char **v)
+int vector_clear(char **v)
 {
 	int i;
 
 	i = 0;
-	while (v[i])
+	if (!v)
+	    return (0);
+	while (v && v[i])
 		free(v[i++]);
-	free(v);
+	free(v[i]);
+	if (v)
+		free(v);
+	
+	return (0);
 }
 
-void exit_error(s_node **a, char **av, bool free_av)
+void exit_error(s_node **a, char **av)
 {
-	if (free_av)
+	if (av)
+	{
+		printf("clearing av\n");
 		vector_clear(av);
-	if (*a)
+	}
+		
+	if (a)
+	{
+		printf("clearing stack\n");
 		clear_stack(a);
+	}
 	write(2, "Error\n", 6);
 	exit(1);
 }

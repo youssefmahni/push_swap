@@ -1,6 +1,10 @@
 #include "get_next_line.h"
 #include "../push_swap.h"
 
+void f()
+    {
+        system("leaks checker");
+    }
 
 static void append_rule(rule **a, char *action)
 {
@@ -14,7 +18,7 @@ static void append_rule(rule **a, char *action)
     if (!new)
     {
         clear_rules(a);
-        write(2, "Error|n",6);
+        write(2, "Error\n",6);
         exit(1);
     }
     new->action = ft_strdup(action);
@@ -54,25 +58,30 @@ static int perform_rules_help(s_node **a, s_node **b, rule *rules)
     return (1);
 }
 
-static void perform_rules(s_node **a, s_node **b, rule *rules)
+static void perform_rules(s_node **a, s_node **b, rule **rules)
 {
     bool c;
-    while (rules)
+    rule *tmp;
+
+    tmp = *rules;
+    while (tmp)
     {
-        if (perform_rules_help(a,b, rules))
+        if (perform_rules_help(a,b, tmp))
             c = 1;
-        else if (ft_strcmp(rules->action, "rrr\n"))
+        else if (ft_strcmp(tmp->action, "rrr\n"))
             rrr(a, b, 0);
-        else if (ft_strcmp(rules->action, "pa\n"))
+        else if (ft_strcmp(tmp->action, "pa\n"))
             pa(a, b, 0);
-        else if (ft_strcmp(rules->action, "pb\n"))
+        else if (ft_strcmp(tmp->action, "pb\n"))
             pb(b, a, 0);
         else 
         {
+            clear_rules(rules);
+            clear_stack(a);
             write(2, "Error\n",6);
             exit(1);
         }
-        rules = rules->next;
+        tmp = tmp->next;
     }
 }
 
@@ -85,29 +94,28 @@ static void okko(s_node *a, s_node *b)
     exit(0);
 }
 
-
 int main(int ac, char **av)
 {
     s_node  *a;
     s_node  *b;
     rule *rules;
     char *line;
-
+atexit(f);
     a = NULL;
     b = NULL;
     rules = NULL;
     av = get_args(ac, av);
     line = get_next_line(0);
-    if (!line)
-        return (0);
+	if (!line)
+        return (vector_clear(av));
     while (line)
     {
         append_rule(&rules, line);
         free(line);
         line = get_next_line(0);
     }
-    init_stack(&a, av, ac == 2);
-    perform_rules(&a, &b, rules);
+    init_stack(&a, av);
+    perform_rules(&a, &b, &rules);
     okko(a, b);
     clear_rules(&rules);
     clear_stack(&a);

@@ -3,7 +3,7 @@
 char **get_args(int ac, char **av)
 {
     if(ac < 2)
-        exit(1);
+        exit(0);
     char **Res = NULL;
     char **tmp = NULL;
     char **tmp2 = NULL;
@@ -12,8 +12,17 @@ char **get_args(int ac, char **av)
     {
         tmp = ps_split(av[i++]);
         tmp2 = ps_join(Res, tmp);
-        free(Res);
         Res = tmp2;
+    }
+    if (!Res)
+        exit(1);
+    i = 0;
+    while (Res[i])
+    {
+        ps_atoi(Res[i], NULL, NULL);
+        if (!isnumber(Res[i]))
+            exit_error(NULL, NULL);
+        i++;
     }
     return (Res);
 }

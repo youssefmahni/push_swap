@@ -26,12 +26,19 @@ typedef struct rule
 
 //for string
 char    **ps_split(const char *str);
-long    ps_atoi(char *str);
+long    ps_atoi(char *str, s_node **a, char **av);
 char    **ps_join(char **a, char **b);
 char    **get_args(int ac, char **av);
 bool    ft_strcmp(const char *s1, const char *s2);
+char	*ft_strdup(const char *str);
+char	*ft_substr(char const *s, unsigned int start, unsigned int end);
+char	*ft_strjoin(char *s1, char const *s2);
+void	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int		ft_strlen(const char *s);
+int     isnumber(char *str);
+
 // for stack
-void    init_stack(s_node **a, char **av, bool free_av);
+void    init_stack(s_node **a, char **av);
 void    print_stack(s_node *a);
 bool    stack_sorted(s_node *a);
 int     stack_len(s_node *a);
@@ -40,8 +47,8 @@ s_node  *stack_min(s_node *a);
 s_node *stack_cheapest(s_node *b);
 
 // for garbage
-void    exit_error(s_node **a, char **av, bool free_av);
-void    vector_clear(char **v);
+void    exit_error(s_node **a, char **av);
+int    vector_clear(char **v);
 void    clear_stack(s_node **a);
 void    clear_rules(rule **a);
 

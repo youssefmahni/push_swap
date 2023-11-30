@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static int isnumber(char *str)
+int isnumber(char *str)
 {
     int i;
 
@@ -30,7 +30,7 @@ static bool is_duplicate(s_node **a, long node_value)
     return (0);
 }
 
-static void append_node(s_node **a, long node_value, char **av, int free_av)
+static void append_node(s_node **a, long node_value, char **av)
 {
     s_node *new;
     s_node *tmp;
@@ -39,7 +39,7 @@ static void append_node(s_node **a, long node_value, char **av, int free_av)
         return;
     new = malloc(sizeof(s_node));
     if (!new)
-        exit_error(a, av, free_av);
+        exit_error(a, av);
     new->value = node_value;
     new->next = NULL;
     if (!*a)
@@ -57,24 +57,20 @@ static void append_node(s_node **a, long node_value, char **av, int free_av)
     }
 }
 
-void init_stack(s_node **a, char **av, bool free_av)
+void init_stack(s_node **a, char **av)
 {
     long node_value;
     int i;
-
     i = 0;
     while (av[i])
     {
         if (!isnumber(av[i]))
-            exit_error(a, av, free_av);
-        node_value = ps_atoi(av[i]);
-        if (node_value > INT_MAX || node_value < INT_MIN)
-            exit_error(a, av, free_av);
+            exit_error(a, av);
+        node_value = ps_atoi(av[i], a, av);
         if (is_duplicate(a, node_value))
-            exit_error(a, av, free_av);
-        append_node(a, node_value, av, free_av);
+            exit_error(a, av);
+        append_node(a, node_value, av);
         i++;
     }
-    if (free_av)
-        vector_clear(av);
+    vector_clear(av);
 }

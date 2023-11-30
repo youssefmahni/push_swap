@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-long	ps_atoi(char *str)
+long	ps_atoi(char *str, s_node **a, char **av)
 {
 	long	res;
 	int		sign;
@@ -19,6 +19,8 @@ long	ps_atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		res *= 10;
+		if (res > INT_MAX || res < INT_MIN)
+			exit_error(a, av);
 		res += *str - '0';
 		str++;
 	}

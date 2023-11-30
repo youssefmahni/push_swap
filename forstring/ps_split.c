@@ -7,6 +7,8 @@ static int	c_w(const char *str)
 
 	counter = 0;
 	i = 0;
+	if (!str)
+		return (-1);
 	while (str && str[i])
 	{
 		if (str[i] != ' ')
@@ -70,7 +72,7 @@ char		**ps_split(const char *str)
 	i = 0;
 	j = 0;
 	strs = (char **) malloc(c_w(str)  * sizeof(char *));
-	if (!strs || !str)
+	if (!strs)
 		return (NULL);
 	while (str[i])
 	{

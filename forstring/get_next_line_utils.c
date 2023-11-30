@@ -1,5 +1,5 @@
 
-#include "get_next_line.h"
+#include "../push_swap.h"
 
 int	ft_strlen(const char *s)
 {
