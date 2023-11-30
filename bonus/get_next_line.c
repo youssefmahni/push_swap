@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 #include "get_next_line.h"
 
-int	find_end_line(char *s)
+static int	find_end_line(char *s)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	find_end_line(char *s)
 	return (-1);
 }
 
-void	ft_fill_cache(int fd, char **cache, int *bytes_read)
+static void	ft_fill_cache(int fd, char **cache, int *bytes_read)
 {
 	char	*temp;
 	char	*buffer;
@@ -56,7 +56,7 @@ void	ft_fill_cache(int fd, char **cache, int *bytes_read)
 	}
 }
 
-char	*clean_cache(char **cache, char *line)
+static char	*clean_cache(char **cache, char *line)
 {
 	char	*temp;
 	int		i;

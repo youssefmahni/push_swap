@@ -28,17 +28,17 @@ typedef struct s_stack
 	struct s_stack	*target;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-}					s_node;
+}					t_node;
 
 typedef struct rule
 {
 	char			*action;
 	struct rule		*next;
-}					rule;
+}					t_rule;
 
 //for string
 char				**ps_split(const char *str);
-long				ps_atoi(char *str, s_node **a, char **av);
+long				ps_atoi(char *str, t_node **a, char **av);
 char				**ps_join(char **a, char **b);
 char				**get_args(int ac, char **av);
 bool				ft_strcmp(const char *s1, const char *s2);
@@ -51,39 +51,38 @@ int					ft_strlen(const char *s);
 int					isnumber(char *str);
 
 // for stack
-void				init_stack(s_node **a, char **av);
-void				print_stack(s_node *a);
-bool				stack_sorted(s_node *a);
-int					stack_len(s_node *a);
-s_node				*stack_max(s_node *a);
-s_node				*stack_min(s_node *a);
-s_node				*stack_cheapest(s_node *b);
+void				init_stack(t_node **a, char **av);
+bool				stack_sorted(t_node *a);
+int					stack_len(t_node *a);
+t_node				*stack_max(t_node *a);
+t_node				*stack_min(t_node *a);
+t_node				*stack_cheapest(t_node *b);
 
 // for garbage
-void				exit_error(s_node **a, char **av);
+void				exit_error(t_node **a, char **av);
 void				vector_clear(char **v);
-void				clear_stack(s_node **a);
-void				clear_rules(rule **a);
+void				clear_stack(t_node **a);
+void				clear_rules(t_rule **a);
 
-// rules
-void				sa(s_node **a, bool print);
-void				sb(s_node **b, bool print);
-void				ss(s_node **a, s_node **b, bool print);
-void				ra(s_node **a, bool print);
-void				rb(s_node **b, bool print);
-void				rr(s_node **a, s_node **b, bool print);
-void				rra(s_node **a, bool print);
-void				rrb(s_node **b, bool print);
-void				rrr(s_node **a, s_node **b, bool print);
-void				pa(s_node **a, s_node **b, bool print);
-void				pb(s_node **b, s_node **a, bool print);
+// t_rules
+void				sa(t_node **a, bool print);
+void				sb(t_node **b, bool print);
+void				ss(t_node **a, t_node **b, bool print);
+void				ra(t_node **a, bool print);
+void				rb(t_node **b, bool print);
+void				rr(t_node **a, t_node **b, bool print);
+void				rra(t_node **a, bool print);
+void				rrb(t_node **b, bool print);
+void				rrr(t_node **a, t_node **b, bool print);
+void				pa(t_node **a, t_node **b, bool print);
+void				pb(t_node **b, t_node **a, bool print);
 
 //for sort
-void				sort_three(s_node **a);
-void				push_swap(s_node **a, s_node **b);
-void				okko(s_node *a, s_node *b);
+void				sort_three(t_node **a);
+void				push_swap(t_node **a, t_node **b);
+void				okko(t_node *a, t_node *b);
 
 //for nodes
-void				set_index_median(s_node *a);
-void				init_nodes(s_node *a, s_node *b);
-void				sort_nodes(s_node **a, s_node **b);
+void				set_index_median(t_node *a);
+void				init_nodes(t_node *a, t_node *b);
+void				sort_nodes(t_node **a, t_node **b);

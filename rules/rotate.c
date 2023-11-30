@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-static void	rotate(s_node **head)
+static void	rotate(t_node **head)
 {
-	s_node	*tmp;
-	s_node	*last;
+	t_node	*tmp;
+	t_node	*last;
 
 	if (!head || !(*head) || !(*head)->next)
 		return ;
@@ -28,21 +28,21 @@ static void	rotate(s_node **head)
 	last->next = tmp;
 }
 
-void	ra(s_node **a, bool print)
+void	ra(t_node **a, bool print)
 {
 	rotate(a);
 	if (print)
 		write(1, "ra\n", 3);
 }
 
-void	rb(s_node **b, bool print)
+void	rb(t_node **b, bool print)
 {
 	rotate(b);
 	if (print)
 		write(1, "rb\n", 3);
 }
 
-void	rr(s_node **a, s_node **b, bool print)
+void	rr(t_node **a, t_node **b, bool print)
 {
 	rotate(a);
 	rotate(b);

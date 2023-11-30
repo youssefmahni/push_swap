@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-long	ps_atoi(char *str, s_node **a, char **av)
+long	ps_atoi(char *str, t_node **a, char **av)
 {
 	long	res;
 	int		sign;

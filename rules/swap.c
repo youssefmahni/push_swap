@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-static void	swap(s_node **head)
+static void	swap(t_node **head)
 {
-	s_node	*tmp;
+	t_node	*tmp;
 
 	if (!head || !(*head) || !(*head)->next)
 		return ;
@@ -24,21 +24,21 @@ static void	swap(s_node **head)
 	*head = tmp;
 }
 
-void	sa(s_node **a, bool print)
+void	sa(t_node **a, bool print)
 {
 	swap(a);
 	if (print)
 		write(1, "sa\n", 3);
 }
 
-void	sb(s_node **b, bool print)
+void	sb(t_node **b, bool print)
 {
 	swap(b);
 	if (print)
 		write(1, "sb\n", 3);
 }
 
-void	ss(s_node **a, s_node **b, bool print)
+void	ss(t_node **a, t_node **b, bool print)
 {
 	swap(a);
 	swap(b);

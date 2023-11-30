@@ -12,20 +12,7 @@
 
 #include "../push_swap.h"
 
-void	print_stack(s_node *a)
-{
-	s_node	*tmp;
-
-	tmp = a;
-	printf("| ");
-	while (tmp)
-	{
-		printf("%d | ", tmp->value);
-		tmp = tmp->next;
-	}
-}
-
-bool	stack_sorted(s_node *a)
+bool	stack_sorted(t_node *a)
 {
 	if (!a)
 		return (1);
@@ -38,7 +25,7 @@ bool	stack_sorted(s_node *a)
 	return (1);
 }
 
-int	stack_len(s_node *a)
+int	stack_len(t_node *a)
 {
 	int	len;
 
@@ -51,10 +38,10 @@ int	stack_len(s_node *a)
 	return (len);
 }
 
-s_node	*stack_min(s_node *a)
+t_node	*stack_min(t_node *a)
 {
-	s_node	*tmp;
-	s_node	*min;
+	t_node	*tmp;
+	t_node	*min;
 
 	if (!a)
 		return (NULL);
@@ -69,10 +56,10 @@ s_node	*stack_min(s_node *a)
 	return (min);
 }
 
-s_node	*stack_max(s_node *a)
+t_node	*stack_max(t_node *a)
 {
-	s_node	*tmp;
-	s_node	*max;
+	t_node	*tmp;
+	t_node	*max;
 
 	if (!a)
 		return (NULL);
@@ -87,9 +74,9 @@ s_node	*stack_max(s_node *a)
 	return (max);
 }
 
-s_node	*stack_cheapest(s_node *b)
+t_node	*stack_cheapest(t_node *b)
 {
-	s_node *tmp;
+	t_node	*tmp;
 
 	tmp = b;
 	while (tmp)

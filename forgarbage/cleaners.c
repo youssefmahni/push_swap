@@ -13,9 +13,9 @@
 #include "../bonus/get_next_line.h"
 #include "../push_swap.h"
 
-void	clear_stack(s_node **a)
+void	clear_stack(t_node **a)
 {
-	s_node	*tmp;
+	t_node	*tmp;
 
 	while (a && *a)
 	{
@@ -39,7 +39,7 @@ void	vector_clear(char **v)
 		free(v);
 }
 
-void	exit_error(s_node **a, char **av)
+void	exit_error(t_node **a, char **av)
 {
 	if (av)
 		vector_clear(av);
@@ -49,9 +49,9 @@ void	exit_error(s_node **a, char **av)
 	exit(1);
 }
 
-void	clear_rules(rule **a)
+void	clear_rules(t_rule **a)
 {
-	rule	*tmp;
+	t_rule	*tmp;
 
 	while (a && *a)
 	{

@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-static void	push(s_node **dst, s_node **src)
+static void	push(t_node **dst, t_node **src)
 {
-	s_node	*tmp;
+	t_node	*tmp;
 
 	if (!src || !dst || !(*src))
 		return ;
@@ -28,14 +28,14 @@ static void	push(s_node **dst, s_node **src)
 	*dst = tmp;
 }
 
-void	pa(s_node **a, s_node **b, bool print)
+void	pa(t_node **a, t_node **b, bool print)
 {
 	push(a, b);
 	if (print)
 		write(1, "pa\n", 3);
 }
 
-void	pb(s_node **b, s_node **a, bool print)
+void	pb(t_node **b, t_node **a, bool print)
 {
 	push(b, a);
 	if (print)

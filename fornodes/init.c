@@ -12,10 +12,10 @@
 
 #include "../push_swap.h"
 
-static void	set_target_node(s_node *a, s_node *b)
+static void	set_target_node(t_node *a, t_node *b)
 {
-	s_node	*tmp;
-	s_node	*target;
+	t_node	*tmp;
+	t_node	*target;
 	long	best_match_value;
 
 	while (b)
@@ -39,7 +39,7 @@ static void	set_target_node(s_node *a, s_node *b)
 	}
 }
 
-static void	set_price(s_node *a, s_node *b)
+static void	set_price(t_node *a, t_node *b)
 {
 	int	a_len;
 	int	b_len;
@@ -59,16 +59,16 @@ static void	set_price(s_node *a, s_node *b)
 	}
 }
 
-static void	set_cheapest_node(s_node *b)
+static void	set_cheapest_node(t_node *b)
 {
 	long	best_price;
-	s_node	*best_match_node;
-	s_node	*tmp;
+	t_node	*best_match_node;
+	t_node	*tmp;
 
 	tmp = b;
 	if (!b)
 		return ;
-	best_price = LONG_MAX; //maybe llmax is better
+	best_price = LONG_MAX;
 	while (tmp)
 	{
 		if (tmp->push_cost < best_price)
@@ -81,11 +81,11 @@ static void	set_cheapest_node(s_node *b)
 	best_match_node->chepest = 1;
 }
 
-void	set_index_median(s_node *a)
+void	set_index_median(t_node *a)
 {
 	int		i;
 	int		median;
-	s_node	*tmp;
+	t_node	*tmp;
 
 	i = 0;
 	tmp = a;
@@ -103,7 +103,7 @@ void	set_index_median(s_node *a)
 	}
 }
 
-void	init_nodes(s_node *a, s_node *b)
+void	init_nodes(t_node *a, t_node *b)
 {
 	set_index_median(a);
 	set_index_median(b);

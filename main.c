@@ -12,16 +12,11 @@
 
 #include "push_swap.h"
 
-void	f(void)
-{
-	system("leaks push_swap");
-}
 int	main(int ac, char **av)
 {
-	s_node	*a;
-	s_node	*b;
+	t_node	*a;
+	t_node	*b;
 
-	// atexit(f);
 	a = NULL;
 	b = NULL;
 	av = get_args(ac, av);
@@ -35,7 +30,6 @@ int	main(int ac, char **av)
 		else
 			push_swap(&a, &b);
 	}
-	// print_stack(a);
 	clear_stack(&a);
 	return (0);
 }

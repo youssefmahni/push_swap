@@ -6,10 +6,9 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:52:42 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:52:43 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/11/30 20:57:19 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
@@ -21,10 +20,5 @@
 #  define BUFFER_SIZE 10
 # endif
 
-char *
-get_next_line(int fd);
-char	*clean_cache(char **cache, char *line);
-void	ft_fill_cache(int fd, char **cache, int *bytes_read);
-int		find_end_line(char *s);
-
+char	*get_next_line(int fd);
 #endif

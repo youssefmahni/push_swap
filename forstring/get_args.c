@@ -12,36 +12,43 @@
 
 #include "../push_swap.h"
 
+static void	validate_arg(char **res)
+{
+	int	i;
+
+	i = 0;
+	while (res[i])
+	{
+		ps_atoi(res[i], NULL, NULL);
+		if (!isnumber(res[i]))
+			exit_error(NULL, NULL);
+		i++;
+	}
+}
+
 char	**get_args(int ac, char **av)
 {
-	char	**Res;
+	char	**res;
 	char	**tmp;
 	char	**tmp2;
 	int		i;
 
 	if (ac < 2)
 		exit(0);
-	Res = NULL;
+	res = NULL;
 	tmp = NULL;
 	tmp2 = NULL;
 	i = 1;
 	while (i < ac)
 	{
 		tmp = ps_split(av[i++]);
-		tmp2 = ps_join(Res, tmp);
-		Res = tmp2;
+		tmp2 = ps_join(res, tmp);
+		res = tmp2;
 	}
-	if (!Res)
+	if (!res)
 		exit(1);
-	i = 0;
-	while (Res[i])
-	{
-		ps_atoi(Res[i], NULL, NULL);
-		if (!isnumber(Res[i]))
-			exit_error(NULL, NULL);
-		i++;
-	}
-	return (Res);
+	validate_arg(res);
+	return (res);
 }
 
 bool	ft_strcmp(const char *s1, const char *s2)

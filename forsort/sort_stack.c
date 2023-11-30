@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-void	sort_three(s_node **a)
+void	sort_three(t_node **a)
 {
-	s_node	*max;
+	t_node	*max;
 
 	max = stack_max(*a);
 	if ((*a)->value == max->value)
@@ -25,9 +25,9 @@ void	sort_three(s_node **a)
 		sa(a, 1);
 }
 
-void	push_swap(s_node **a, s_node **b)
+void	push_swap(t_node **a, t_node **b)
 {
-	s_node	*smallest;
+	t_node	*smallest;
 	int		a_len;
 
 	a_len = stack_len(*a);
@@ -49,7 +49,7 @@ void	push_swap(s_node **a, s_node **b)
 			rra(a, 1);
 }
 
-void	okko(s_node *a, s_node *b)
+void	okko(t_node *a, t_node *b)
 {
 	if (stack_sorted(a) && !b)
 		write(1, "OK\n", 3);

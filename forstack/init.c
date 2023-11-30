@@ -28,9 +28,9 @@ int	isnumber(char *str)
 	return (1);
 }
 
-static bool	is_duplicate(s_node **a, long node_value)
+static bool	is_duplicate(t_node **a, long node_value)
 {
-	s_node	*tmp;
+	t_node	*tmp;
 
 	tmp = *a;
 	while (tmp)
@@ -42,14 +42,14 @@ static bool	is_duplicate(s_node **a, long node_value)
 	return (0);
 }
 
-static void	append_node(s_node **a, long node_value, char **av)
+static void	append_node(t_node **a, long node_value, char **av)
 {
-	s_node	*new;
-	s_node	*tmp;
+	t_node	*new;
+	t_node	*tmp;
 
 	if (!a)
 		return ;
-	new = malloc(sizeof(s_node));
+	new = malloc(sizeof(t_node));
 	if (!new)
 		exit_error(a, av);
 	new->value = node_value;
@@ -69,7 +69,7 @@ static void	append_node(s_node **a, long node_value, char **av)
 	}
 }
 
-void	init_stack(s_node **a, char **av)
+void	init_stack(t_node **a, char **av)
 {
 	long	node_value;
 	int		i;
