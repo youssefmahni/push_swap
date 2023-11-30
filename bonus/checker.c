@@ -90,11 +90,12 @@ static void	perform_rules(t_node **a, t_node **b, t_rule **rules)
 	}
 }
 
-static void	get_rules(char **line, t_rule **t_rules)
+static void	get_rules(char **line, t_rule **rules)
 {
 	while (*line)
 	{
-		append_rule(t_rules, *line);
+		validate_rule(*line, rules);
+		append_rule(rules, *line);
 		free(*line);
 		*line = get_next_line(0);
 	}
@@ -111,15 +112,15 @@ int	main(int ac, char **av)
 	b = NULL;
 	rules = NULL;
 	av = get_args(ac, av);
+	init_stack(&a, av);
 	line = get_next_line(0);
 	if (!line)
 	{
-		vector_clear(av);
+		okko(a, b);
 		write(2, "KO\n", 3);
 		return (1);
 	}
 	get_rules(&line, &rules);
-	init_stack(&a, av);
 	perform_rules(&a, &b, &rules);
 	okko(a, b);
 	clear_rules(&rules);

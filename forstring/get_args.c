@@ -15,6 +15,7 @@
 static void	validate_arg(char **res)
 {
 	int	i;
+	int j;
 
 	i = 0;
 	while (res[i])
@@ -22,9 +23,27 @@ static void	validate_arg(char **res)
 		ps_atoi(res[i], NULL, NULL);
 		if (!isnumber(res[i]))
 			exit_error(NULL, NULL);
+		j = i + 1;
+		while (res[j])
+		{
+			if (ft_strcmp(res[i], res[j]))
+				exit_error(NULL, NULL);
+			j++;
+		}
 		i++;
 	}
 }
+
+void	validate_rule(char *line, t_rule **rules)
+{
+	if (!ft_strcmp(line, "sa\n") && !ft_strcmp(line, "sb\n") && !ft_strcmp(line, "ss\n") && !ft_strcmp(line, "pa\n") && !ft_strcmp(line, "pb\n") && !ft_strcmp(line, "ra\n") && !ft_strcmp(line, "rb\n") && !ft_strcmp(line, "rr\n") && !ft_strcmp(line, "rra\n") && !ft_strcmp(line, "rrb\n") && !ft_strcmp(line, "rrr\n"))
+	{
+		clear_rules(rules);
+		free(line);
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	}
 
 char	**get_args(int ac, char **av)
 {

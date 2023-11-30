@@ -49,6 +49,7 @@ char				*ft_strjoin(char *s1, char const *s2);
 void				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strlen(const char *s);
 int					isnumber(char *str);
+void				validate_rule(char *line, t_rule **rules);
 
 // for stack
 void				init_stack(t_node **a, char **av);
