@@ -1,34 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 18:53:47 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:53:48 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-static void swap(s_node **head)
+static void	swap(s_node **head)
 {
-    if (!head || !(*head) || !(*head)->next)
-        return ;
-    s_node *tmp;
-    tmp = (*head)->next; // tmp = 2
-    (*head)->next = tmp->next; // 1->3
-    tmp->next = *head; // 2->1
-    *head = tmp; // head = 2
+	s_node	*tmp;
+
+	if (!head || !(*head) || !(*head)->next)
+		return ;
+	tmp = (*head)->next;
+	(*head)->next = tmp->next;
+	tmp->next = *head;
+	*head = tmp;
 }
 
-void sa(s_node **a, bool print)
+void	sa(s_node **a, bool print)
 {
-    swap(a);
-    if (print)
-        write(1, "sa\n", 3);
+	swap(a);
+	if (print)
+		write(1, "sa\n", 3);
 }
 
-void sb(s_node **b, bool print)
+void	sb(s_node **b, bool print)
 {
-    swap(b);
-    if (print)
-        write(1, "sb\n", 3);
+	swap(b);
+	if (print)
+		write(1, "sb\n", 3);
 }
 
-void ss(s_node **a, s_node **b, bool print)
+void	ss(s_node **a, s_node **b, bool print)
 {
-    swap(a);
-    swap(b);
-    if (print)
-        write(1, "ss\n", 3);
+	swap(a);
+	swap(b);
+	if (print)
+		write(1, "ss\n", 3);
 }

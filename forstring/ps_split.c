@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 18:53:32 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:53:33 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 static int	c_w(const char *str)
@@ -63,7 +75,7 @@ static void	*ft_free(char **str, int j)
 	return (NULL);
 }
 
-char		**ps_split(const char *str)
+char	**ps_split(const char *str)
 {
 	int		i;
 	int		j;
@@ -71,7 +83,7 @@ char		**ps_split(const char *str)
 
 	i = 0;
 	j = 0;
-	strs = (char **) malloc(c_w(str)  * sizeof(char *));
+	strs = (char **)malloc(c_w(str) * sizeof(char *));
 	if (!strs)
 		return (NULL);
 	while (str[i])

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 18:53:22 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:53:23 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../push_swap.h"
 
@@ -64,7 +76,7 @@ char	*ft_substr(char const *s, unsigned int start, unsigned int end)
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s); 
+	s_len = ft_strlen(s);
 	if (end > s_len - start)
 		end = s_len - start - 1;
 	sub = (char *)malloc(end + 2);

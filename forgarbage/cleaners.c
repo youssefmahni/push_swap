@@ -1,9 +1,22 @@
-#include "../push_swap.h"
-#include "../bonus/get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cleaners.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 18:52:47 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:52:48 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void clear_stack(s_node **a)
+#include "../bonus/get_next_line.h"
+#include "../push_swap.h"
+
+void	clear_stack(s_node **a)
 {
-	s_node *tmp;
+	s_node	*tmp;
+
 	while (a && *a)
 	{
 		tmp = (*a)->next;
@@ -12,13 +25,13 @@ void clear_stack(s_node **a)
 	}
 }
 
-void vector_clear(char **v)
+void	vector_clear(char **v)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!v)
-	    return ;
+		return ;
 	while (v && v[i])
 		free(v[i++]);
 	free(v[i]);
@@ -26,7 +39,7 @@ void vector_clear(char **v)
 		free(v);
 }
 
-void exit_error(s_node **a, char **av)
+void	exit_error(s_node **a, char **av)
 {
 	if (av)
 		vector_clear(av);
@@ -36,9 +49,9 @@ void exit_error(s_node **a, char **av)
 	exit(1);
 }
 
-void clear_rules(rule **a)
+void	clear_rules(rule **a)
 {
-	rule *tmp;
+	rule	*tmp;
 
 	while (a && *a)
 	{

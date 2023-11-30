@@ -1,5 +1,17 @@
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 18:52:39 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:52:40 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
+#include "get_next_line.h"
 
 int	find_end_line(char *s)
 {
@@ -29,7 +41,7 @@ void	ft_fill_cache(int fd, char **cache, int *bytes_read)
 			*cache = NULL;
 			return ;
 		}
-		*bytes_read = (int) read(fd, buffer, BUFFER_SIZE);
+		*bytes_read = (int)read(fd, buffer, BUFFER_SIZE);
 		if (*bytes_read <= 0)
 		{
 			free(buffer);

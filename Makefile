@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/30 18:53:59 by ymahni            #+#    #+#              #
+#    Updated: 2023/11/30 18:58:26 by ymahni           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 # CFLAGS = -fsanitize=address -Wall -Wextra -Werror -g
 CFLAGS = -Wall -Wextra -Werror
@@ -28,3 +40,5 @@ bonus: $(BOBJS)
 	$(CC) $(CFLAGS) -o $(BNAME) $(BOBJS)
 
 .PHONY : all clean fclean re
+
+# make bonus relink
