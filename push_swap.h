@@ -36,7 +36,6 @@ typedef struct rule
 	struct rule		*next;
 }					t_rule;
 
-//for string
 char				**ps_split(const char *str);
 long				ps_atoi(char *str, t_node **a, char **av);
 char				**ps_join(char **a, char **b);
@@ -51,7 +50,6 @@ int					ft_strlen(const char *s);
 int					isnumber(char *str);
 void				validate_rule(char *line, t_rule **rules);
 
-// for stack
 void				init_stack(t_node **a, char **av);
 bool				stack_sorted(t_node *a);
 int					stack_len(t_node *a);
@@ -59,13 +57,11 @@ t_node				*stack_max(t_node *a);
 t_node				*stack_min(t_node *a);
 t_node				*stack_cheapest(t_node *b);
 
-// for garbage
 void				exit_error(t_node **a, char **av);
 void				vector_clear(char **v);
 void				clear_stack(t_node **a);
 void				clear_rules(t_rule **a);
 
-// t_rules
 void				sa(t_node **a, bool print);
 void				sb(t_node **b, bool print);
 void				ss(t_node **a, t_node **b, bool print);
@@ -78,12 +74,10 @@ void				rrr(t_node **a, t_node **b, bool print);
 void				pa(t_node **a, t_node **b, bool print);
 void				pb(t_node **b, t_node **a, bool print);
 
-//for sort
 void				sort_three(t_node **a);
 void				push_swap(t_node **a, t_node **b);
 void				okko(t_node *a, t_node *b);
 
-//for nodes
 void				set_index_median(t_node *a);
 void				init_nodes(t_node *a, t_node *b);
 void				sort_nodes(t_node **a, t_node **b);
