@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ymahni <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 18:54:07 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:54:08 by ymahni           ###   ########.fr       */
+/*   Created: 2023/12/01 11:10:09 by ymahni            #+#    #+#             */
+/*   Updated: 2023/12/01 11:10:13 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <limits.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include <limits.h>
+# include <stdbool.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -81,3 +82,5 @@ void				okko(t_node *a, t_node *b);
 void				set_index_median(t_node *a);
 void				init_nodes(t_node *a, t_node *b);
 void				sort_nodes(t_node **a, t_node **b);
+
+#endif
