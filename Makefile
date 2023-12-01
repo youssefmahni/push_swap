@@ -18,7 +18,7 @@ $(NAME): $(OBJS) push_swap.h
 
 bonus: $(BNAME)
 
-$(BNAME): $(BOBJS) bonus/get_next_line.h
+$(BNAME): $(BOBJS) bonus/get_next_line.h push_swap.h
 	$(CC) $(CFLAGS) -o $(BNAME) $(BOBJS)
 
 clean:
