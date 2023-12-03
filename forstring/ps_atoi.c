@@ -30,7 +30,7 @@ long	ps_atoi(char *str, t_node **a, char **av)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		if ((res * sign) > INT_MAX / 10 || (res * sign) < INT_MIN / 10)
+		if ((res * sign) > (INT_MAX - (*str - '0')) / 10 || (res * sign) < (INT_MIN + (*str - '0')) / 10)
 			exit_error(a, av);
 		res = res * 10 + (*str - '0');
 		str++;
