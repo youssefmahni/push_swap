@@ -25,11 +25,26 @@ void	sort_three(t_node **a)
 		sa(a, 1);
 }
 
+static void basic_sort(t_node **a, t_node **b)
+{
+	int a_len;
+
+	a_len = stack_len(*a);
+	while (a_len-- > 0)
+	{
+		if ((*a)->value < a_len / 2)
+			ra(a, 1);
+		else
+			pb(b, a, 1);
+	}
+}
+
 void	push_swap(t_node **a, t_node **b)
 {
 	t_node	*smallest;
 	int		a_len;
 
+	basic_sort(a, b);
 	a_len = stack_len(*a);
 	while (a_len-- > 3)
 		pb(b, a, 1);

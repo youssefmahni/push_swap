@@ -13,13 +13,19 @@ BNAME = checker
 
 all: $(NAME)
 
-$(NAME): $(OBJS) push_swap.h
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 bonus: $(BNAME)
 
-$(BNAME): $(BOBJS) bonus/get_next_line.h push_swap.h
+$(BNAME): $(BOBJS)
 	$(CC) $(CFLAGS) -o $(BNAME) $(BOBJS)
+
+bonus/%.o: bonus/%.c bonus/get_next_line.h push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.c push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS) $(BOBJS)
