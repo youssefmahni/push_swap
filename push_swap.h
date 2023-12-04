@@ -31,17 +31,9 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_node;
 
-typedef struct rule
-{
-	char			*action;
-	struct rule		*next;
-}					t_rule;
-
 char				**ps_split(const char *str);
 long				ps_atoi(char *str, t_node **a, char **av);
 char				**ps_join(char **a, char **b);
-char				**get_args(int ac, char **av);
-bool				ft_strcmp(const char *s1, const char *s2);
 char				*ft_strdup(const char *str);
 char				*ft_substr(char const *s, unsigned int start,
 						unsigned int end);
@@ -49,7 +41,8 @@ char				*ft_strjoin(char *s1, char const *s2);
 void				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strlen(const char *s);
 int					isnumber(char *str);
-void				validate_rule(char *line, t_rule **rules);
+char				**get_args(int ac, char **av);
+bool				ft_strcmp(const char *s1, const char *s2);
 
 void				init_stack(t_node **a, char **av);
 bool				stack_sorted(t_node *a);
@@ -61,7 +54,6 @@ t_node				*stack_cheapest(t_node *b);
 void				exit_error(t_node **a, char **av);
 void				vector_clear(char **v);
 void				clear_stack(t_node **a);
-void				clear_rules(t_rule **a);
 
 void				sa(t_node **a, bool print);
 void				sb(t_node **b, bool print);
@@ -77,7 +69,6 @@ void				pb(t_node **b, t_node **a, bool print);
 
 void				sort_three(t_node **a);
 void				push_swap(t_node **a, t_node **b);
-void				okko(t_node *a, t_node *b);
 
 void				set_index_median(t_node *a);
 void				init_nodes(t_node *a, t_node *b);

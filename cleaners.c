@@ -1,24 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   cleaners.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 18:52:42 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 20:57:19 by ymahni           ###   ########.fr       */
+/*   Created: 2023/11/30 18:52:47 by ymahni            #+#    #+#             */
+/*   Updated: 2023/11/30 18:52:48 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	clear_stack(t_node **a)
+{
+	t_node	*tmp;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
+	while (a && *a)
+	{
+		tmp = (*a)->next;
+		free(*a);
+		*a = tmp;
+	}
+}
 
-char	*get_next_line(int fd);
-#endif
+void	vector_clear(char **v)
+{
+	int	i;
+
+	i = 0;
+	if (!v)
+		return ;
+	while (v && v[i])
+		free(v[i++]);
+	free(v[i]);
+	if (v)
+		free(v);
+}
+
+void	exit_error(t_node **a, char **av)
+{
+	if (av)
+		vector_clear(av);
+	if (a)
+		clear_stack(a);
+	write(2, "Error\n", 6);
+	exit(1);
+}
+

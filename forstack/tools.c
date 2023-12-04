@@ -12,19 +12,6 @@
 
 #include "../push_swap.h"
 
-bool	stack_sorted(t_node *a)
-{
-	if (!a)
-		return (1);
-	while (a->next)
-	{
-		if (a->value > a->next->value)
-			return (0);
-		a = a->next;
-	}
-	return (1);
-}
-
 int	stack_len(t_node *a)
 {
 	int	len;

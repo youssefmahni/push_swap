@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../bonus/get_next_line.h"
 #include "../push_swap.h"
 
 static long	vector_len(char **str)
@@ -30,6 +29,20 @@ static void	clear_a_b(char **a, char **b)
 {
 	vector_clear(a);
 	vector_clear(b);
+}
+
+
+char *ft_strdup(const char *str)
+{
+	size_t s;
+	char *dup;
+
+	s = ft_strlen(str) + 1;
+	dup = (char *)malloc(s);
+	if (!dup)
+		return (NULL);
+	ft_strlcpy(dup, str, s);
+	return (dup);
 }
 
 char	**ps_join(char **a, char **b)

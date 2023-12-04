@@ -6,11 +6,11 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:07 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:08 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:53:27 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	sort_three(t_node **a)
 {
@@ -25,10 +25,10 @@ void	sort_three(t_node **a)
 		sa(a, 1);
 }
 
-static void basic_sort(t_node **a, t_node **b)
+static void	basic_sort(t_node **a, t_node **b)
 {
-	int a_len;
-	int avg;
+	int	a_len;
+	int	avg;
 
 	a_len = stack_len(*a);
 	avg = a_len / 2;
@@ -69,11 +69,3 @@ void	push_swap(t_node **a, t_node **b)
 			rra(a, 1);
 }
 
-void	okko(t_node *a, t_node *b)
-{
-	if (stack_sorted(a) && !b)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
-	exit(0);
-}

@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:11 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:12 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:56:01 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	isnumber(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if(!str[i])
+	if (!str[i])
 		return (0);
 	while (str[i])
 	{
@@ -88,4 +88,17 @@ void	init_stack(t_node **a, char **av)
 		i++;
 	}
 	vector_clear(av);
+}
+
+bool stack_sorted(t_node *a)
+{
+	if (!a)
+		return (1);
+	while (a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

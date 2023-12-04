@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:25 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:26 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:56:54 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ long	ps_atoi(char *str, t_node **a, char **av)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		if ((res * sign) > (INT_MAX - (*str - '0')) / 10 || (res * sign) < (INT_MIN + (*str - '0')) / 10)
+		if ((res * sign) > (INT_MAX - (*str - '0')) / 10 
+			|| (res * sign) < (INT_MIN + (*str - '0')) / 10)
 			exit_error(a, av);
 		res = res * 10 + (*str - '0');
 		str++;

@@ -10,30 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "get_next_line_bonus.h"
 
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-void	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	index;
-
-	if (size > 0)
-	{
-		index = -1;
-		while (src[++index] && index < (size))
-			dst[index] = src[index];
-		dst[index] = '\0';
-	}
-}
 
 char	*ft_strjoin(char *s1, char const *s2)
 {
@@ -55,18 +33,6 @@ char	*ft_strjoin(char *s1, char const *s2)
 	return (NULL);
 }
 
-char	*ft_strdup(const char *str)
-{
-	size_t	s;
-	char	*dup;
-
-	s = ft_strlen(str) + 1;
-	dup = (char *)malloc(s);
-	if (!dup)
-		return (NULL);
-	ft_strlcpy(dup, str, s);
-	return (dup);
-}
 
 char	*ft_substr(char const *s, unsigned int start, unsigned int end)
 {

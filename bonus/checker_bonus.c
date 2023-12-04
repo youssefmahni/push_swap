@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static void	append_rule(t_rule **a, char *action)
 {
@@ -117,7 +116,7 @@ int	main(int ac, char **av)
 	if (!line)
 	{
 		okko(a, b);
-		write(2, "KO\n", 3);
+		write(2, "KO\n", 3); // why the hell i wrote ths !!!
 		return (1);
 	}
 	get_rules(&line, &rules);
