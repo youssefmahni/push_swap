@@ -114,11 +114,7 @@ int	main(int ac, char **av)
 	init_stack(&a, av);
 	line = get_next_line(0);
 	if (!line)
-	{
 		okko(a, b);
-		write(2, "KO\n", 3); // why the hell i wrote ths !!!
-		return (1);
-	}
 	get_rules(&line, &rules);
 	perform_rules(&a, &b, &rules);
 	okko(a, b);
