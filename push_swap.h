@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ymahni <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:10:09 by ymahni            #+#    #+#             */
-/*   Updated: 2023/12/01 11:10:13 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/08 11:04:18 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <limits.h>
 # include <stdbool.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -34,16 +33,11 @@ typedef struct s_stack
 char				**ps_split(const char *str);
 long				ps_atoi(char *str, t_node **a, char **av);
 char				**ps_join(char **a, char **b);
-char				*ft_strdup(const char *str);
-char				*ft_substr(char const *s, unsigned int start,
-						unsigned int end);
-char				*ft_strjoin(char *s1, char const *s2);
 void				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int					ft_strlen(const char *s);
 int					isnumber(char *str);
 char				**get_args(int ac, char **av);
 bool				ft_strcmp(const char *s1, const char *s2);
-
 void				init_stack(t_node **a, char **av);
 bool				stack_sorted(t_node *a);
 int					stack_len(t_node *a);
