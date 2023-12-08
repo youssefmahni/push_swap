@@ -78,7 +78,7 @@ static void	set_cheapest_node(t_node *b)
 		}
 		tmp = tmp->next;
 	}
-	best_match_node->chepest = 1;
+	best_match_node->cheapest = 1;
 }
 
 void	set_index_median(t_node *a)
@@ -93,7 +93,7 @@ void	set_index_median(t_node *a)
 	while (tmp)
 	{
 		tmp->index = i;
-		tmp->chepest = 0;
+		tmp->cheapest = 0;
 		if (i <= median)
 			tmp->above_median = 1;
 		else

@@ -1,15 +1,25 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker_utils1_bonus.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ymahni <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/04 15:03:42 by ymahni            #+#    #+#             */
+/*   Updated: 2023/12/04 15:05:25 by ymahni           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
 void	validate_rule(char *line, t_rule **rules)
 {
-	if (!ft_strcmp(line, "sa\n") && !ft_strcmp(line, "sb\n") && 
-		!ft_strcmp(line, "ss\n") && !ft_strcmp(line, "pa\n") && 
-		!ft_strcmp(line, "pb\n") && !ft_strcmp(line, "ra\n") && 
-		!ft_strcmp(line, "rb\n") && !ft_strcmp(line, "rr\n") && 
-		!ft_strcmp(line, "rra\n") && !ft_strcmp(line, "rrb\n") && 
-		!ft_strcmp(line, "rrr\n"))
+	if (!ft_strcmp(line, "sa\n") && !ft_strcmp(line, "sb\n")
+		&& !ft_strcmp(line, "ss\n") && !ft_strcmp(line, "pa\n")
+		&& !ft_strcmp(line, "pb\n") && !ft_strcmp(line, "ra\n")
+		&& !ft_strcmp(line, "rb\n") && !ft_strcmp(line, "rr\n")
+		&& !ft_strcmp(line, "rra\n") && !ft_strcmp(line, "rrb\n")
+		&& !ft_strcmp(line, "rrr\n"))
 	{
 		clear_rules(rules);
 		free(line);
@@ -20,7 +30,7 @@ void	validate_rule(char *line, t_rule **rules)
 
 void	clear_rules(t_rule **a)
 {
-	t_rule *tmp;
+	t_rule	*tmp;
 
 	while (a && *a)
 	{
@@ -30,7 +40,7 @@ void	clear_rules(t_rule **a)
 	}
 }
 
-void okko(t_node *a, t_node *b)
+void	okko(t_node *a, t_node *b)
 {
 	if (stack_sorted(a) && !b)
 		write(1, "OK\n", 3);

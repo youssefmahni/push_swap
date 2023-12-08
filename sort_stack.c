@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:07 by ymahni            #+#    #+#             */
-/*   Updated: 2023/12/03 19:53:27 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:03:25 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	push_swap(t_node **a, t_node **b)
 	int		a_len;
 
 	a_len = stack_len(*a);
-	if (a_len > 100)
+	if (a_len > 99)
 		basic_sort(a, b);
 	a_len = stack_len(*a);
 	while (a_len-- > 3)
@@ -68,4 +68,3 @@ void	push_swap(t_node **a, t_node **b)
 		while (*a != smallest)
 			rra(a, 1);
 }
-

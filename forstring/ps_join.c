@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:28 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:29 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:15:36 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ static void	clear_a_b(char **a, char **b)
 	vector_clear(b);
 }
 
-
-char *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
-	size_t s;
-	char *dup;
+	size_t	s;
+	char	*dup;
 
 	s = ft_strlen(str) + 1;
 	dup = (char *)malloc(s);

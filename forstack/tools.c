@@ -68,7 +68,7 @@ t_node	*stack_cheapest(t_node *b)
 	tmp = b;
 	while (tmp)
 	{
-		if (tmp->chepest)
+		if (tmp->cheapest)
 			return (tmp);
 		tmp = tmp->next;
 	}

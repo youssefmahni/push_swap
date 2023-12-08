@@ -24,7 +24,7 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	int				push_cost;
-	bool			chepest;
+	bool			cheapest;
 	bool			above_median;
 	struct s_stack	*target;
 	struct s_stack	*next;

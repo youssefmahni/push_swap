@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:11 by ymahni            #+#    #+#             */
-/*   Updated: 2023/12/03 19:56:01 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:14:03 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	init_stack(t_node **a, char **av)
 	vector_clear(av);
 }
 
-bool stack_sorted(t_node *a)
+bool	stack_sorted(t_node *a)
 {
 	if (!a)
 		return (1);

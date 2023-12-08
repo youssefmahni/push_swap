@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:22 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:23 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:39:34 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-
 
 char	*ft_strjoin(char *s1, char const *s2)
 {
@@ -32,7 +31,6 @@ char	*ft_strjoin(char *s1, char const *s2)
 	}
 	return (NULL);
 }
-
 
 char	*ft_substr(char const *s, unsigned int start, unsigned int end)
 {

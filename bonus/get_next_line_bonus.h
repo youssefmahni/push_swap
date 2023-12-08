@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:52:42 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 20:57:19 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/04 15:39:13 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include "../push_swap.h"
 
@@ -27,7 +27,7 @@ typedef struct rule
 
 char	*get_next_line(int fd);
 void	validate_rule(char *line, t_rule **rules);
-void    clear_rules(t_rule **a);
-void    okko(t_node *a, t_node *b);
+void	clear_rules(t_rule **a);
+void	okko(t_node *a, t_node *b);
 
 #endif
