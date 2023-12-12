@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:07 by ymahni            #+#    #+#             */
-/*   Updated: 2023/12/04 15:03:25 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/12 11:56:08 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ static void	basic_sort(t_node **a, t_node **b)
 	int	avg;
 
 	a_len = stack_len(*a);
-	avg = a_len / 2;
-	while (a_len-- > 0)
+	avg = stack_avg(*a);
+	while (a_len-- > 3)
 	{
 		if ((*a)->value < avg)
-			ra(a, 1);
-		else
 			pb(b, a, 1);
+		else
+			ra(a, 1);
 	}
 }
 
@@ -47,13 +47,12 @@ void	push_swap(t_node **a, t_node **b)
 	int		a_len;
 
 	a_len = stack_len(*a);
-	if (a_len > 99)
+	if (a_len > 5)
 		basic_sort(a, b);
 	a_len = stack_len(*a);
 	while (a_len-- > 3)
 		pb(b, a, 1);
-	if (a_len == 2)
-		sort_three(a);
+	sort_three(a);
 	while (*b)
 	{
 		init_nodes(*a, *b);

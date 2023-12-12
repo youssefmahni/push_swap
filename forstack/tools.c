@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 18:53:15 by ymahni            #+#    #+#             */
-/*   Updated: 2023/11/30 18:53:16 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/12 11:42:17 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,19 @@ t_node	*stack_cheapest(t_node *b)
 		tmp = tmp->next;
 	}
 	return (b);
+}
+
+int	stack_avg(t_node *a)
+{
+	ssize_t	sum;
+	int		len;
+
+	len = stack_len(a);
+	sum = 0;
+	while (a)
+	{
+		sum += a->value;
+		a = a->next;
+	}
+	return (sum / len);
 }

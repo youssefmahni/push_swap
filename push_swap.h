@@ -6,7 +6,7 @@
 /*   By: ymahni <ymahni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:10:09 by ymahni            #+#    #+#             */
-/*   Updated: 2023/12/08 11:04:18 by ymahni           ###   ########.fr       */
+/*   Updated: 2023/12/12 11:44:02 by ymahni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int					stack_len(t_node *a);
 t_node				*stack_max(t_node *a);
 t_node				*stack_min(t_node *a);
 t_node				*stack_cheapest(t_node *b);
+int					stack_avg(t_node *a);
 
 void				exit_error(t_node **a, char **av);
 void				vector_clear(char **v);
